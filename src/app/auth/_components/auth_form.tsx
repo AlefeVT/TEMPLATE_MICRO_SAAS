@@ -13,7 +13,7 @@ export function AuthForm() {
 
   const handleSubmit = form.handleSubmit(async (data) => {
     try {
-      await signIn('email', { email: data.email, redirect: false })
+      await signIn('nodemailer', { email: data.email, redirect: false })
       toast({
         title: 'Link de verificação enviado!',
         description: 'Verifique seu e-mail para obter o link para login',
@@ -53,8 +53,8 @@ export function AuthForm() {
             {...form.register('email')}
           />
         </div>
-        <Button className="w-full py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-          Enviar Link de Verificação
+        <Button className="w-full py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500" type='submit' disabled={form.formState.isSubmitting}>
+        {form.formState.isSubmitting ? 'Enviando...' : 'Enviar Link de Verificação'}
         </Button>
       </form>
       <div className="text-center text-sm text-gray-500 dark:text-gray-400">
