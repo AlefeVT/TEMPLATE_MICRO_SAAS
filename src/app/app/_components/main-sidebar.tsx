@@ -28,8 +28,6 @@ export function MainDashboardSidebar({ user }: MainDashboardSidebarProps) {
     return pathname === path
   }
 
-  if(!user) return
-
   return (
     <DashboardSidebar>
       <DashboardSidebarHeader>
