@@ -7,16 +7,15 @@ Shadcn UI: Uma biblioteca de interface de usuário moderna para construir aplica
 Validação de Usuário: Autenticação e validação segura de usuários para garantir controle de acesso e integridade dos dados.
 Integração com Stripe: Processamento de pagamentos com Stripe, suportando vários métodos de pagamento e garantindo transações seguras.
 Primeiros Passos
-Pré-requisitos
-Antes de começar, certifique-se de que você atenda aos seguintes requisitos:
 
+#### Pré-requisitos
+Antes de começar, certifique-se de que você atenda aos seguintes requisitos:
 Node.js e npm instalados
 Uma conta Stripe para integração de pagamentos
 Um arquivo .env configurado com suas chaves de API do Stripe e outras variáveis de ambiente necessárias
-Instalação
+
+#### Instalação
 Clone o repositório
-
-
 Instale as dependências
 
 bash
@@ -33,13 +32,13 @@ STRIPE_PUBLISHABLE_KEY=""
 STRIPE_SECRET_KEY=""
 STRIPE_WEBHOOK_SECRET=""
 
-Executando a Aplicação
+#### Executando a Aplicação
 Inicie o servidor de desenvolvimento
 
 npm run dev
 A aplicação estará disponível em http://localhost:3000.
 
-Estrutura do Projeto
+#### Estrutura do Projeto
 src/: Contém o código-fonte principal do projeto
 components/: Componentes reutilizáveis de UI construídos com Shadcn UI
 app/: Páginas da aplicação e configurações de roteamento
@@ -48,13 +47,13 @@ utils/: Funções utilitárias e auxiliares
 public/: Arquivos estáticos e públicos
 Validação de Usuário
 
-O mecanismo de validação de usuário inclui:
+#### O mecanismo de validação de usuário inclui:
 Autenticação: Formulários seguros de login e registro
 Autorização: Middleware para proteger rotas e garantir que apenas usuários autorizados acessem certas partes da aplicação
 Validação: Validação de formulários para garantir integridade e segurança dos dados
 Integração com Stripe
 
-A integração com Stripe permite:
+#### A integração com Stripe permite:
 Processamento de Pagamentos: Manipulação de vários métodos de pagamento de forma segura
 Gerenciamento de Assinaturas: Criação e gerenciamento de assinaturas recorrentes
 Manipulação de Webhooks: Escuta de eventos do Stripe para gerenciar status e atualizações de pagamentos
@@ -65,11 +64,11 @@ Os componentes do Shadcn UI podem ser personalizados editando os estilos e compo
 Contribuindo
 Contribuições são bem-vindas! Por favor, faça um fork do repositório e crie um pull request com suas mudanças.
 
-Licença
+#### Licença
 Este projeto é licenciado sob a Licença MIT. Consulte o arquivo LICENSE para mais detalhes.
 
-Agradecimentos
+#### Agradecimentos
 Shadcn UI
 Stripe
 Contato
-Para quaisquer dúvidas ou sugestões, por favor, abra uma issue ou entre em contato comigo pelo e-mail alefevt@gmail.com
+### Para quaisquer dúvidas ou sugestões, por favor, abra uma issue ou entre em contato comigo pelo e-mail alefevt@gmail.com
