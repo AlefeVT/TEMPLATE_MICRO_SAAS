@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   DashboardSidebar,
@@ -36,32 +36,31 @@ export function MainDashboardSidebar({ user }: MainDashboardSidebarProps) {
       <DashboardSidebarMain className="flex flex-col flex-grow">
         <DashboardSidebarNav>
           <DashboardSidebarNavMain>
-
-            <DashboardSidebarNavLink
-              href="/app"
-              active={isActive('/app')}
-            >
-              <HomeIcon className='w-3 h-3 mr-3' />
+            <DashboardSidebarNavLink href="/app" active={isActive('/app')}>
+              <HomeIcon className="w-3 h-3 mr-3" />
               Home
             </DashboardSidebarNavLink>
             <DashboardSidebarNavLink
               href="/app/settings"
               active={isActive('/app/settings')}
             >
-              <MixerVerticalIcon className='w-3 h-3 mr-3' />
+              <MixerVerticalIcon className="w-3 h-3 mr-3" />
               Configurações
             </DashboardSidebarNavLink>
-
           </DashboardSidebarNavMain>
         </DashboardSidebarNav>
 
         <DashboardSidebarNav className="mt-auto">
           <DashboardSidebarNavHeader>
-            <DashboardSidebarNavHeaderTitle>Links extras</DashboardSidebarNavHeaderTitle>
+            <DashboardSidebarNavHeaderTitle>
+              Links extras
+            </DashboardSidebarNavHeaderTitle>
           </DashboardSidebarNavHeader>
 
           <DashboardSidebarNavMain>
-            <DashboardSidebarNavLink href="/">Precisa de ajuda?</DashboardSidebarNavLink>
+            <DashboardSidebarNavLink href="/">
+              Precisa de ajuda?
+            </DashboardSidebarNavLink>
             <DashboardSidebarNavLink href="/">Site</DashboardSidebarNavLink>
           </DashboardSidebarNavMain>
         </DashboardSidebarNav>

@@ -1,28 +1,45 @@
 'use client'
 
-import { DashboardSidebarNav, DashboardSidebarNavLink, DashboardSidebarNavMain } from "@/components/dashboard/sidebar"
+import {
+  DashboardSidebarNav,
+  DashboardSidebarNavLink,
+  DashboardSidebarNavMain,
+} from '@/components/dashboard/sidebar'
+import { usePathname } from 'next/navigation'
 
 export function SettingsSidebar() {
-    return (
-        <aside>
-        <DashboardSidebarNav>
-            <DashboardSidebarNavMain>
+  const pathname = usePathname()
 
-                <DashboardSidebarNavLink href="/app/settings">
-                    Meu Perfil
-                </DashboardSidebarNavLink>
+  const isActive = (path: string) => {
+    return pathname === path
+  }
 
-                <DashboardSidebarNavLink href="/app/settings/theme">
-                    Tema
-                </DashboardSidebarNavLink>
+  return (
+    <aside>
+      <DashboardSidebarNav>
+        <DashboardSidebarNavMain>
+          <DashboardSidebarNavLink
+            href="/app/settings"
+            active={isActive('/app/settings')}
+          >
+            Meu Perfil
+          </DashboardSidebarNavLink>
 
-                <DashboardSidebarNavLink href="/app/settings/billing">
-                    Faturamento
-                </DashboardSidebarNavLink>
+          <DashboardSidebarNavLink
+            href="/app/settings/theme"
+            active={isActive('/app/settings/theme')}
+          >
+            Aparência
+          </DashboardSidebarNavLink>
 
-
-            </DashboardSidebarNavMain>
-        </DashboardSidebarNav>
+          <DashboardSidebarNavLink
+            href="/app/settings/billing"
+            active={isActive('/app/settings/billing')}
+          >
+            Faturamento
+          </DashboardSidebarNavLink>
+        </DashboardSidebarNavMain>
+      </DashboardSidebarNav>
     </aside>
-    )
+  )
 }
