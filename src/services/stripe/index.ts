@@ -4,7 +4,7 @@ import { config } from '@/config'
 import { prisma } from '../database'
 
 export const stripe = new Stripe(config.stripe.secretKey || '', {
-  apiVersion: '2023-10-16',
+  apiVersion: '2024-04-10',
   httpClient: Stripe.createFetchHttpClient(),
 })
 

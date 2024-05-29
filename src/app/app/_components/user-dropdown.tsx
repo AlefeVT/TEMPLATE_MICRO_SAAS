@@ -64,8 +64,8 @@ export function UserDropDown({ user }: UserDropDownProps) {
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <ExitIcon className="w-3 h-3 mr-3" onClick={() => signOut()} />
+        <DropdownMenuItem onClick={() => signOut()}>
+          <ExitIcon className="w-3 h-3 mr-3" />
           Desconectar
         </DropdownMenuItem>
       </DropdownMenuContent>
