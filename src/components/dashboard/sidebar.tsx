@@ -6,7 +6,10 @@ export type DashboardSidebarGenericProps<T = any> = {
   className?: string
 } & T
 
-export function DashboardSidebar({ className, children }: DashboardSidebarGenericProps) {
+export function DashboardSidebar({
+  className,
+  children,
+}: DashboardSidebarGenericProps) {
   return (
     <aside
       className={cn([
@@ -19,8 +22,15 @@ export function DashboardSidebar({ className, children }: DashboardSidebarGeneri
   )
 }
 
-export function DashboardSidebarHeader({ className, children }: DashboardSidebarGenericProps) {
-  return <header className={cn(['px-6 py-3 border-b border-border', className])}>{children}</header>
+export function DashboardSidebarHeader({
+  className,
+  children,
+}: DashboardSidebarGenericProps) {
+  return (
+    <header className={cn(['px-6 py-3 border-b border-border', className])}>
+      {children}
+    </header>
+  )
 }
 
 export function DashboardSidebarHeaderTitle({
@@ -30,15 +40,24 @@ export function DashboardSidebarHeaderTitle({
   return <h2 className={cn(['', className])}>{children}</h2>
 }
 
-export function DashboardSidebarMain({ className, children }: DashboardSidebarGenericProps) {
+export function DashboardSidebarMain({
+  className,
+  children,
+}: DashboardSidebarGenericProps) {
   return <main className={cn(['px-3', className])}>{children}</main>
 }
 
-export function DashboardSidebarNav({ className, children }: DashboardSidebarGenericProps) {
+export function DashboardSidebarNav({
+  className,
+  children,
+}: DashboardSidebarGenericProps) {
   return <nav className={cn(['', className])}>{children}</nav>
 }
 
-export function DashboardSidebarNavHeader({ className, children }: DashboardSidebarGenericProps) {
+export function DashboardSidebarNavHeader({
+  className,
+  children,
+}: DashboardSidebarGenericProps) {
   return <header className={cn(['', className])}>{children}</header>
 }
 
@@ -58,7 +77,10 @@ export function DashboardSidebarNavHeaderTitle({
   )
 }
 
-export function DashboardSidebarNavMain({ className, children }: DashboardSidebarGenericProps) {
+export function DashboardSidebarNavMain({
+  className,
+  children,
+}: DashboardSidebarGenericProps) {
   return <main className={cn(['flex flex-col', className])}>{children}</main>
 }
 
@@ -76,14 +98,21 @@ export function DashboardSidebarNavLink({
   return (
     <Link
       href={href}
-      className={cn(['flex itemns-center text-xs px-3 py-2 rounded-md', active && 'bg-secondary', className])}
+      className={cn([
+        'flex itemns-center text-xs px-3 py-2 rounded-md',
+        active && 'bg-secondary',
+        className,
+      ])}
     >
       {children}
     </Link>
   )
 }
 
-export function DashboardSidebarFooter({ className, children }: DashboardSidebarGenericProps) {
+export function DashboardSidebarFooter({
+  className,
+  children,
+}: DashboardSidebarGenericProps) {
   return (
     <footer className={cn(['p-6 mt-auto border-t border-border', className])}>
       {children}

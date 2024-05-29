@@ -72,7 +72,7 @@ export function TodoDataTable({ data }: TodoDataTable) {
     toast({
       title: 'Atualização bem-sucedida',
       description: 'O item da lista de tarefas foi atualizado com sucesso.',
-    })    
+    })
   }
 
   const columns: ColumnDef<Todo>[] = [

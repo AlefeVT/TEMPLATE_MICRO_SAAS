@@ -49,9 +49,9 @@ export function TodoUpsertSheet({ children }: TodoUpsertSheetProps) {
     ref.current?.click()
 
     toast({
-        title: 'Sucesso',
-        description: 'Sua tarefa foi atualizada com sucesso.',
-      })      
+      title: 'Sucesso',
+      description: 'Sua tarefa foi atualizada com sucesso.',
+    })
   })
 
   return (
@@ -65,10 +65,11 @@ export function TodoUpsertSheet({ children }: TodoUpsertSheetProps) {
             <SheetHeader>
               <SheetTitle>Inserir ou Atualizar Tarefa</SheetTitle>
               <SheetDescription>
-                Adicione ou edite seu item de tarefa aqui. Clique em salvar quando terminar.
+                Adicione ou edite seu item de tarefa aqui. Clique em salvar
+                quando terminar.
               </SheetDescription>
             </SheetHeader>
-  
+
             <FormField
               control={form.control}
               name="title"
@@ -76,7 +77,10 @@ export function TodoUpsertSheet({ children }: TodoUpsertSheetProps) {
                 <FormItem>
                   <FormLabel>Título</FormLabel>
                   <FormControl>
-                    <Input placeholder="Digite o título da sua tarefa" {...field} />
+                    <Input
+                      placeholder="Digite o título da sua tarefa"
+                      {...field}
+                    />
                   </FormControl>
                   <FormDescription>
                     Este será o nome exibido publicamente para a tarefa.
@@ -85,7 +89,7 @@ export function TodoUpsertSheet({ children }: TodoUpsertSheetProps) {
                 </FormItem>
               )}
             />
-  
+
             <SheetFooter className="mt-auto">
               <Button type="submit">Salvar alterações</Button>
             </SheetFooter>
@@ -94,4 +98,4 @@ export function TodoUpsertSheet({ children }: TodoUpsertSheetProps) {
       </SheetContent>
     </Sheet>
   )
-}  
+}
