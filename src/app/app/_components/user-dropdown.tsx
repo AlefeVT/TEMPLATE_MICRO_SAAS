@@ -12,6 +12,7 @@ import {
 import { ExitIcon, MixerVerticalIcon, RocketIcon } from '@radix-ui/react-icons'
 import { Session } from 'next-auth'
 import { signOut } from 'next-auth/react'
+import Link from 'next/link'
 
 type UserDropDownProps = {
   user: Session['user']
@@ -30,7 +31,7 @@ export function UserDropDown({ user }: UserDropDownProps) {
               src={user?.image as string}
               alt={user?.name as string}
             />
-            <AvatarFallback>U</AvatarFallback>
+            <AvatarFallback>{user?.name.charAt(0)}</AvatarFallback>
           </Avatar>
 
           <div className="flex flex-col flex-1 space-y-1 text-left">
@@ -54,14 +55,20 @@ export function UserDropDown({ user }: UserDropDownProps) {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <MixerVerticalIcon className="w-3 h-3 mr-3" />
-            Configurações
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <RocketIcon className="w-3 h-3 mr-3" />
-            Upgrade
-          </DropdownMenuItem>
+          <Link href="/app/settings">
+            <DropdownMenuItem>
+              <MixerVerticalIcon className="w-3 h-3 mr-3" />
+              Configurações
+            </DropdownMenuItem>
+          </Link>
+
+          <Link href="/app/settings/billing">
+            <DropdownMenuItem>
+              <RocketIcon className="w-3 h-3 mr-3" />
+              Upgrade
+            </DropdownMenuItem>
+          </Link>
+
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => signOut()}>

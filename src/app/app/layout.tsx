@@ -1,13 +1,25 @@
-import { PropsWithChildren } from 'react'
-import { MainDashboardSidebar } from './_components/main-sidebar'
-import { auth } from '@/services/auth'
+import { PropsWithChildren } from 'react';
+import { auth } from '@/services/auth';
+import { ClientSideProvider, } from './_components/ClientSideProvider';
+import { Sidebar } from './_components/Sidebar';
 
 export default async function Layout({ children }: PropsWithChildren) {
-  const session = await auth()
+  const session = await auth();
+
   return (
-    <div className="grid grid-cols-[16rem_1fr]">
-      <MainDashboardSidebar user={session?.user} />
-      <main>{children}</main>
-    </div>
-  )
+    <ClientSideProvider session={session}>
+      <div className="flex h-screen  overflow-hidden">
+        <div className="flex h-screen">
+          <Sidebar user={session.user}/>
+        </div>
+        <main className='w-full h-screen'>
+        {children}
+          </main>
+      </div>
+    </ClientSideProvider>
+
+
+
+
+  );
 }

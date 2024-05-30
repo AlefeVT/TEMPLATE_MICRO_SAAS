@@ -1,4 +1,10 @@
+"use client"
+
+import { useSidebar } from '@/app/app/_components/ClientSideProvider'
+import { UserDropDown } from '@/app/app/_components/user-dropdown'
 import { cn } from '@/lib/utils'
+import { HamburgerMenuIcon } from '@radix-ui/react-icons'
+import { Session } from 'next-auth'
 
 export type DashboardPageGenericProps<T = unknown> = {
   children: React.ReactNode
@@ -16,14 +22,18 @@ export function DashboardPageHeader({
   className,
   children,
 }: DashboardPageGenericProps) {
+  const { toggleSidebar } = useSidebar();
+  
   return (
     <header
       className={cn([
-        'px-6 h-12 border-b border-border flex items-center justify-between',
+        'px-6 border-b border-border flex items-center justify-between',
         className,
       ])}
     >
       {children}
+
+      <button onClick={toggleSidebar} className="md:hidden "><HamburgerMenuIcon className=' w-8 h-8'/></button>
     </header>
   )
 }
@@ -34,7 +44,7 @@ export function DashboardPageHeaderTitle({
 }: DashboardPageGenericProps) {
   return (
     <span
-      className={cn(['text-xs text-muted-foreground uppercase', className])}
+      className={cn(['text-xs py-6 text-muted-foreground uppercase', className])}
     >
       {children}
     </span>

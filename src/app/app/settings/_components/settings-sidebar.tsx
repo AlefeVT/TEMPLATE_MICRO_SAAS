@@ -17,10 +17,12 @@ export function SettingsSidebar() {
   return (
     <aside>
       <DashboardSidebarNav>
-        <DashboardSidebarNavMain>
+
+        <main className='flex mb-10'>
           <DashboardSidebarNavLink
             href="/app/settings"
             active={isActive('/app/settings')}
+            className='px-4'
           >
             Meu Perfil
           </DashboardSidebarNavLink>
@@ -28,6 +30,7 @@ export function SettingsSidebar() {
           <DashboardSidebarNavLink
             href="/app/settings/theme"
             active={isActive('/app/settings/theme')}
+            className='px-4'
           >
             Aparência
           </DashboardSidebarNavLink>
@@ -35,10 +38,12 @@ export function SettingsSidebar() {
           <DashboardSidebarNavLink
             href="/app/settings/billing"
             active={isActive('/app/settings/billing')}
+            className='px-4'
           >
             Faturamento
           </DashboardSidebarNavLink>
-        </DashboardSidebarNavMain>
+          </main>
+
       </DashboardSidebarNav>
     </aside>
   )

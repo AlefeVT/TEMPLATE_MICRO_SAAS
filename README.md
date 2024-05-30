@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Template de Projeto SAS com Shadcn UI, Validação de Usuário e Integração de Pagamentos com Stripe
+Visão Geral
+Este repositório é um template que eu criei para a criação de uma aplicação Software as a Service (SAS). Ele vem pré-configurado com a biblioteca Shadcn UI para uma interface de usuário moderna e responsiva, mecanismos de validação de usuário e métodos de pagamento integrados usando Stripe.
 
-## Getting Started
+Funcionalidades
+Shadcn UI: Uma biblioteca de interface de usuário moderna para construir aplicações web responsivas e interativas.
+Validação de Usuário: Autenticação e validação segura de usuários para garantir controle de acesso e integridade dos dados.
+Integração com Stripe: Processamento de pagamentos com Stripe, suportando vários métodos de pagamento e garantindo transações seguras.
+Primeiros Passos
+Pré-requisitos
+Antes de começar, certifique-se de que você atenda aos seguintes requisitos:
 
-First, run the development server:
+Node.js e npm instalados
+Uma conta Stripe para integração de pagamentos
+Um arquivo .env configurado com suas chaves de API do Stripe e outras variáveis de ambiente necessárias
+Instalação
+Clone o repositório
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+bash
+Copiar código
+git clone https://github.com/seu-usuario/sas-template.git
+cd sas-template
+Instale as dependências
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+bash
+Copiar código
+npm install
+Configure as variáveis de ambiente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Crie um arquivo .env no diretório raiz e adicione suas chaves de API do Stripe e outras configurações necessárias:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+plaintext
+Copiar código
+EMAIL_SERVER=""
+EMAIL_FROM=""   
 
-## Learn More
+NEXTAUTH_SECRET=""
 
-To learn more about Next.js, take a look at the following resources:
+NEXT_PUBLIC_APP_URL=""
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+STRIPE_PUBLISHABLE_KEY=""
+STRIPE_SECRET_KEY=""
+STRIPE_WEBHOOK_SECRET=""
+Executando a Aplicação
+Inicie o servidor de desenvolvimento
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+bash
+Copiar código
+npm start
+A aplicação estará disponível em http://localhost:3000.
 
-## Deploy on Vercel
+Estrutura do Projeto
+src/: Contém o código-fonte principal do projeto
+components/: Componentes reutilizáveis de UI construídos com Shadcn UI
+app/: Páginas da aplicação e configurações de roteamento
+services/: Módulos de serviço para validação de usuário e integração com Stripe
+utils/: Funções utilitárias e auxiliares
+public/: Arquivos estáticos e públicos
+Validação de Usuário
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+O mecanismo de validação de usuário inclui:
+Autenticação: Formulários seguros de login e registro
+Autorização: Middleware para proteger rotas e garantir que apenas usuários autorizados acessem certas partes da aplicação
+Validação: Validação de formulários para garantir integridade e segurança dos dados
+Integração com Stripe
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+A integração com Stripe permite:
+Processamento de Pagamentos: Manipulação de vários métodos de pagamento de forma segura
+Gerenciamento de Assinaturas: Criação e gerenciamento de assinaturas recorrentes
+Manipulação de Webhooks: Escuta de eventos do Stripe para gerenciar status e atualizações de pagamentos
+Uso
+Personalizando a UI
+Os componentes do Shadcn UI podem ser personalizados editando os estilos e componentes no diretório src/components. Consulte a documentação do Shadcn UI para mais detalhes.
+
+Contribuindo
+Contribuições são bem-vindas! Por favor, faça um fork do repositório e crie um pull request com suas mudanças.
+
+Licença
+Este projeto é licenciado sob a Licença MIT. Consulte o arquivo LICENSE para mais detalhes.
+
+Agradecimentos
+Shadcn UI
+Stripe
+Contato
+Para quaisquer dúvidas ou sugestões, por favor, abra uma issue ou entre em contato comigo pelo e-mail seu-email@exemplo.com.
